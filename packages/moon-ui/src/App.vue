@@ -1,9 +1,16 @@
 <script
   setup
   lang="ts"
-></script>
+>
+import Button from '@/components/button'
+</script>
 
-<template>Hello Vue3!</template>
+<template>
+  <h3>组件测试</h3>
+  <div>
+    <Button>sad健康卡到那时</Button>
+  </div>
+</template>
 
 <style>
 #app {

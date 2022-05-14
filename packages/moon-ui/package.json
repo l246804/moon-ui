@@ -2,8 +2,7 @@
   "name": "moon-ui",
   "description": "MoonUI is a Moon design component library developed based on Vue3.",
   "version": "0.0.0",
-  "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "main": "src/index.ts",
   "author": "leihaohao",
   "license": "MIT",
   "repository": {
@@ -22,9 +21,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
+    "sass": "^1.51.0",
     "unplugin-auto-import": "^0.7.1",
-    "vite": "^2.9.7",
-    "vue": "^3.2.25",
-    "vue-global-api": "^0.4.1"
+    "vite": "^2.9.7"
+  },
+  "dependencies": {
+    "@vueuse/core": "^8.4.2",
+    "vue": "^3.2.25"
   }
 }

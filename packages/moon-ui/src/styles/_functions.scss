@@ -1,0 +1,38 @@
+@function match($condition, $truthy, $falsy) {
+  @if $condition == true {
+    @return $truthy;
+  }
+  @return $falsy;
+}
+
+@function namespace($block) {
+  @return $css-prefix + '-' + $block;
+}
+
+@function get-var($key, $default-value: '') {
+  @if str-length($default-value) > 0 {
+    $default-value: ',' + $default-value;
+  }
+  @return var(--#{$css-prefix}-#{$key + $default-value});
+}
+
+@function map-flat($map, $join-char: '.', $path: '') {
+  $_map: ();
+
+  @each $key, $val in $map {
+    $_path: match($path == '', $key, $path + $join-char + $key);
+
+    @if type-of($val) == 'map' {
+      $_map: map-merge($_map, map-flat($val, $join-char, $_path));
+    } @else {
+      $_map: map-merge(
+        $_map,
+        (
+          $_path: $val
+        )
+      );
+    }
+  }
+
+  @return $_map;
+}

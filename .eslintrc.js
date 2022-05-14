@@ -27,9 +27,19 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'no-console': enableOnlyDev(),
-    'on-debugger': enableOnlyDev(),
+    'no-debugger': enableOnlyDev(),
     'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': [2, { devDependencies: true }],
-    'import/extensions': 0
+    'import/extensions': 0,
+    'import/prefer-default-export': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    'consistent-return': 0,
+    'no-restricted-syntax': 0,
+    'no-use-before-define': 0,
+    '@typescript-eslint/ban-types': 0,
+    'no-underscore-dangle': 0,
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/ban-ts-comment': 0,
+    'no-param-reassign': 0
   }
 }

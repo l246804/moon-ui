@@ -1,0 +1,15 @@
+@import './mixins.scss';
+@import './functions.scss';
+
+$css-prefix: moon;
+
+/* Base vars */
+@include set-vars(
+  (
+    color: (
+      primary: #fff,
+      danger: red,
+      success: green
+    )
+  )
+);

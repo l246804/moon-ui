@@ -1,0 +1,28 @@
+@use './functions';
+
+@mixin set-var($key, $val, $global: true) {
+  %css-var {
+    --#{$css-prefix + '-' + $key}: #{$val};
+  }
+
+  @if $global {
+    :root {
+      @extend %css-var;
+    }
+  } @else {
+    @extend %css-var;
+  }
+}
+
+@mixin set-vars($map) {
+  :root {
+    @each $key, $val in functions.map-flat($map, '-', $css-prefix) {
+      --#{$key}: #{$val};
+    }
+  }
+}
+
+@mixin flex-center() {
+  justify-content: center;
+  align-items: center;
+}
